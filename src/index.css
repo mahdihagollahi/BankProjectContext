@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+   background: url('./assets/Img/windose 11.jpeg');
+   background-size: cover;
+   background-repeat: no-repeat;
+   
+}
+::placeholder {
+    text-align: center; 
+ }
+ .input-with-space {
+    letter-spacing: 4px;
+ }
+
+ 
