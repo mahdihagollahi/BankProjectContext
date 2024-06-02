@@ -1,11 +1,10 @@
 import Transaction from "./Transaction";
 import History from "./History";
-import { BrowserRouter, Router, Route, Link, Routes } from "react-router-dom";
-import { IoCard } from "react-icons/io5";
-import { FaRegEdit } from "react-icons/fa";
+import {  Route, Routes } from "react-router-dom";
 import InputCard from "./InputCard";
 import { useState } from "react";
 import Card from "../Commponent/Card";
+import Navbar from "../Commponent/Navbar";
 
 
 
@@ -29,6 +28,11 @@ function EveryThing() {
   const [cartCash, setcartCash] = useState(null);
   const [historyList , sethistoryList] = useState([])
 
+
+  const [imageCard, setImageCard] = useState("");
+
+
+  
   const SelectCard = (event) => {
     const foundedCard =list.map((card)=>{
       return card.id === event.id;
@@ -74,6 +78,170 @@ setinventory("")
 
 }
 
+const bankImge = (e) => {
+  const value = e.target.value.slice(0,4);
+  setnumber(value);
+
+  switch (value) {
+    case "6037":
+      setImageCard("src/assets/Img/saderat.png");
+      break;
+
+    case "6219":
+      setImageCard("src/assets/Img/Blue.png");
+      break;
+
+    case "5029":
+      setImageCard("src/assets/Img/Dey.png");
+      break;
+
+    case "2071":
+      setImageCard("src/assets/Img/Toseye.png");
+      break;
+
+    case "6276":
+      setImageCard("src/assets/Img/Toseye.png");
+      break;
+
+    case "5022":
+      setImageCard("src/assets/Img/Pasargard.png");
+      break;
+
+    case "5028":
+      setImageCard("src/assets/Img/Shahr.png");
+      break;
+
+    case "5029":
+      setImageCard("src/assets/Img/Taavon.png");
+      break;
+
+    case "5029":
+      setImageCard("src/assets/Img/Karafarin-Bank-logo.png.webp");
+      break;
+
+    case "5054":
+      setImageCard("src/assets/Img/gardeshgari.png");
+      break;
+
+    case "5057":
+      setImageCard("src/assets/Img/iranZamin.png");
+      break;
+
+    case "5058":
+      setImageCard("src/assets/Img/Kosar.png");
+      break;
+
+    case "5892":
+      setImageCard("src/assets/Img/Sepah.png");
+      break;
+
+    case "5894":
+      setImageCard("src/assets/Img/Refah.png");
+      break;
+
+    case "6037":
+      setImageCard("src/assets/Img/Keshvarzi.png");
+      break;
+
+    case "6392":
+      setImageCard("src/assets/Img/Keshvarzi.png");
+      break;
+
+    case "6037":
+      setImageCard("src/assets/Img/Meli.png");
+      break;
+
+    case "6063":
+      setImageCard("src/assets/Img/Mehr.png");
+      break;
+
+    case "6104" :
+      setImageCard("src/assets/Img/Melat.png");
+      break;
+
+      case  "6104":
+        setImageCard("src/assets/Img/Melat.png");
+        break;
+
+    case "6104":
+      setImageCard("src/assets/Img/Melat.png");
+      break;
+
+    case "9919":
+      setImageCard("src/assets/Img/Melat.png");
+      break;
+
+    case "62192":
+      setImageCard("src/assets/Img/Saman.png");
+      break;
+
+    case "6221":
+      setImageCard("src/assets/Img/Parsian-removebg-preview.png");
+      break;
+
+    case "6391":
+      setImageCard("src/assets/Img/Parsian-removebg-preview.png");
+      break;
+
+    case "6278":
+      setImageCard("src/assets/Img/Parsian-removebg-preview.png");
+      break;
+
+    case "6273":
+      setImageCard("src/assets/Img/Ansar.png");
+      break;
+
+    case "6274":
+      setImageCard("src/assets/Img/Noveen.png");
+      break;
+    case "6277":
+      setImageCard("src/assets/Img/Post.svg");
+      break;
+
+    case "6279":
+      setImageCard("src/assets/Img/Maadan.png");
+      break;
+
+    case "6280":
+      setImageCard("src/assets/Img/Maskan.jpeg");
+      break;
+
+    case "6281":
+      setImageCard("src/assets/Img/Etebary.png");
+      break;
+
+    case "6362":
+      setImageCard("src/assets/Img/Ayandeh.png");
+      break;
+
+    case "6367":
+      setImageCard("src/assets/Img/Markazi.png");
+      break;
+
+    case "6369":
+      setImageCard("src/assets/Img/Hekmat.png");
+      break;
+
+    case "6393":
+      setImageCard("src/assets/Img/Sina.png");
+      break;
+
+    case "63937":
+      setImageCard("src/assets/Img/Mehr-eghtesad.png");
+      break;
+    case "6395":
+      setImageCard("src/assets/Img/Ghavamin.png");
+      break;
+    case "6396":
+      setImageCard("src/assets/Img/Sarmaye.png");
+      break;
+
+    default:
+      setImageCard("");
+      break;
+  }
+};
+
 // const negetive = (negetivePrice , id) =>{
 //   const NewInventor = List.find((card) => {
 //     return card.id === id && card.cartCash >= negetivePrice
@@ -116,59 +284,13 @@ const negetiveInventory = (negetivePrice , id) => {
   }
   return (
     <div>
-      <nav className="bg-white border-gray-200 dark:bg-gray-900">
-
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-
-          <a className="flex items-center space-x-3 rtl:space-x-reverse">
-
-            <img src="https://flowbite.com/docs/images/logo.svg" className="h-8"/>
-
-            <span className='"self-center text-2xl font-semibold whitespace-nowrap dark:text-white'>  AceCoinpay </span>
-
-          </a>
-
-          <button className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
-
-            <span className="sr-only">Open main menu</span>
-
-            <svg className="w-5 h-5"  aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14" >
-
-              <path  stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"/>
-
-            </svg>
-
-          </button>
-
-          <div className="hidden w-full md:block md:w-auto">
-
-            <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-
-
-              <li>
-
-                <Link className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"to="/">InputCard </Link>
-
-              </li>
-
-              <li>
-
-                <Link className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" to="/Transaction"> Transaction</Link>
-
-              </li>
-              <li>
-             <Link  className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" to="/History" >History</Link>
-
-             </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+    
+      <Navbar/>
 
       <Routes>
     
         <Route path="/History" element={<History historyList={historyList}/>}/>
-        <Route index element={<InputCard AddCard={AddCard} name={name} number={number} setnumber={setnumber} setname={setname} cvv2={cvv2} setcvv2={setcvv2} year={year} setyear={setyear} month={month} setmonth={setmonth} password={password} setpassword={setpassword} inventory={inventory} setinventory={setinventory}  />} />
+        <Route index element={<InputCard bankImge={bankImge}  imageCard={imageCard} AddCard={AddCard} name={name} number={number} setnumber={setnumber} setname={setname} cvv2={cvv2} setcvv2={setcvv2} year={year} setyear={setyear} month={month} setmonth={setmonth} password={password} setpassword={setpassword} inventory={inventory} setinventory={setinventory}  />} />
         <Route path="/Transaction" element={<Transaction  negetiveInventory={()=>negetiveInventory(cartCash , idCart)} cartCash={cartCash} setcartCash={setcartCash} historyList={historyList}  sethistoryList={sethistoryList}  numberCart={numberCart} nameCart={nameCart} setnameCart={setnameCart} cvv2Cart={cvv2Cart} setcvv2Cart={setcvv2Cart} yearCart={yearCart} setyearCart={setyearCart} monthCart={monthCart} setmonthCart={setmonthCart} passwordCart={passwordCart} setpasswordCart={setpasswordCart}    list={list} />} />
       </Routes>
     <div>
@@ -176,7 +298,7 @@ const negetiveInventory = (negetivePrice , id) => {
 
       {list.map((item) => {
         return (
-        <Card  name={item.name} Number={item.number} Password={item.password} Cvv2={item.cvv} Year={item.year} Month={item.month} Inventory={item.inventory} SelectCard={()=>SelectCard(item)}/>
+        <Card  bankImge={bankImge}  imageCard={imageCard}  name={item.name} Number={item.number} Password={item.password} Cvv2={item.cvv} Year={item.year} Month={item.month} Inventory={item.inventory} SelectCard={()=>SelectCard(item)}/>
         )
       })}
 
